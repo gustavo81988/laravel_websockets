@@ -10,7 +10,7 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class Test
+class Test implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -24,6 +24,10 @@ class Test
         //
     }
 
+    public function broadcastWith(){
+        return ['lat' => '200.345','long' => '450.478'];
+    }
+
     /**
      * Get the channels the event should broadcast on.
      *
@@ -31,6 +35,6 @@ class Test
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('channel-name');
+        return new Channel('test');
     }
 }
