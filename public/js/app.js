@@ -1925,6 +1925,8 @@ __webpack_require__.r(__webpack_exports__);
 
     Echo.channel('test').listen('Test', function (e) {
       _this.coordenadas = e;
+      console.log(e);
+      console.log('ok');
     });
     console.log('Component mounted.');
   }
