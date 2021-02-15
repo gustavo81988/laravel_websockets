@@ -15,6 +15,8 @@
             Echo.channel('test')
             .listen('Test', (e) => {
                 this.coordenadas = e
+                console.log(e)
+                console.log('ok')
             })
             console.log('Component mounted.')
         }
